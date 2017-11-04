@@ -1,0 +1,19 @@
+.navbar{
+    position: relative;
+    li, a { cursor: pointer; }
+}
+
+
+@media #{$desktop} {
+    &.space-top .navbar, .space-top .navbar{ min-height: calc(100vh - #{$desktopAdaptiveTop} );}
+    .navbar {
+        width: 100%; 
+        max-width: $navbarMax;
+        min-width: $navbarMin;
+        height: 100%;
+    }
+}
+
+@media #{$mobile} {
+    .navbar { @include adaptiveHeader(); }
+}

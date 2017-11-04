@@ -1,0 +1,174 @@
+// Geometric mixins (Kudos to Nicolas Gallagher: https://css-tricks.com/examples/ShapesOfCSS/)
+// -- Triangles
+// -- -- Left
+@mixin triangle-left($size, $color: $highlight) {
+    width: 0;
+    height: 0;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+}
+
+// -- -- right
+@mixin triangle-right($size, $color: $highlight) {
+    width: 0;
+    height: 0;
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+}
+
+// -- -- top
+@mixin triangle-top($size, $color: $highlight) {
+    width: 0;
+    height: 0;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+}
+
+// -- -- bottom
+@mixin triangle-bottom($size, $color: $highlight) {
+    width: 0;
+    height: 0;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+}
+
+
+// -- Hexagon
+@mixin hexagon($size, $color: $highlight) {
+    position: relative;
+    width: $size;
+    height: $size / 1.7320016165348420991859592402286;
+    background-color: $color;
+    margin: ( $size / 3.4642032332563510392609699769053) 0;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        border-left: ( $size / 2) solid transparent;
+        border-right: ( $size / 2) solid transparent;
+    }
+
+    &::before {
+        bottom: 100%;
+        border-bottom: ( $size / 3.4642032332563510392609699769053) solid $color;
+    }
+
+    &::after {
+        top: 100%;
+        width: 0;
+        border-top: ( $size / 3.4642032332563510392609699769053) solid $color;
+    }
+}
+
+// -- Octagon
+@mixin octagon($size, $color, $background: $background) {
+    width: $size;
+    height: $size;
+    background: $color;
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        left: 0;
+        height: 0;
+        position: absolute;
+        width: $size / 4.7380952380952380952380952380952;
+        border-left: ($size / 3.4482758620689655172413793103448) solid $background;
+        border-right: ($size / 3.4482758620689655172413793103448) solid $background;
+    }
+    &::before {
+        top: 0;
+        border-bottom: ($size / 3.4482758620689655172413793103448) solid $color;
+    }
+    &::after {
+        bottom: 0;
+        border-top: ($size / 3.4482758620689655172413793103448) solid $color;
+    }
+}
+
+// -- Heart
+@mixin heart($size, $color, $background) {
+
+    $half: $size / 2;
+    $height: $size / 1.1111111111111111111111111111111;
+    $bHeight: $size / 1.25;
+
+    position: relative;
+    width: $size;
+    height: $size;
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        left: $half;
+        top: 0;
+        width: $half;
+        height: $bHeight;
+        background: $color;
+        border-radius: $half $half 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+    &::after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+    }
+}
+
+// -- Cross (plus)
+@mixin cross($size, $color) {
+    background: $color;
+    height: $size;
+    position: relative;
+    width: $size / 5;
+    &::after {
+        background: $color;
+        content: "";
+        height: $size / 5;
+        left: $size / 2.5 * -1;
+        position: absolute;
+        top: $size / 2.5;
+        width: $size;
+    }
+}
+
+// -- Cone
+@mixin cone($height, $color, $sides: ( $height * .7)) {
+    width: 0;
+    height: 0;
+    border-left: $sides solid transparent;
+    border-right: $sides solid transparent;
+    border-top: $height solid $color;
+    border-radius: 50%;
+}
+
+// -- Magnifying glass
+@mixin magnifying($size, $color) {
+    /* This controls the size. */
+    font-size: $size;
+    display: inline-block;
+    width: $size / 25;
+    height: $size / 25;
+    border: ($size / 100) solid $color;
+    position: relative;
+    border-radius: $size / 28.571428571428571428571428571429;
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        right: $size / 40 * -1;
+        bottom: $size / 100 * -1;
+        border-width: 0;
+        background: $color;
+        width: $size / 28.571428571428571428571428571429;
+        height: $size / 125;
+        transform: rotate(45deg);
+    }
+}

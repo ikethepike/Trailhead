@@ -1,0 +1,89 @@
+// Adaptive header
+@mixin adaptiveHeader()
+{
+      width: 100%;
+      height: $desktopGolden;
+      position: relative; 
+      display: flex;
+      flex-shrink: 0;
+      z-index: 10;
+
+      // Variations 
+      &.fixed  { position: fixed; }
+      &.sticky { position: sticky; }
+      &.fixed, &.sticky { top: 0; left: 0; }
+
+      // Center-y all items 
+      > * {
+          height: 100%;
+          position: relative;
+          display: flex;
+          align-items: center;
+      }
+
+      > *:not(.content-flow) {
+          width: 100%;
+          &:only-child { padding: 0 $mobileMargin; }
+          &:last-child { 
+              justify-content: flex-end; 
+              padding-right: $mobileMargin;
+          }
+          &:first-child { 
+              padding-left: $mobileMargin; 
+              padding-right: 0;
+              justify-content: flex-start;
+          }
+      }
+      
+      // Mobile state
+      @media #{$mobile} {
+        height: $mobileGolden;
+        // Mobile
+        > *:only-child {
+            overflow-x: auto;
+            > * { white-space: pre; }
+            &::after{ 
+                width: $mobileGolden; 
+                height: $mobileGolden;
+                content: "";
+                display: block;
+                margin-right: 5rem;
+                flex-shrink: 0;
+            }
+        }
+        
+        // Mobile gradient fade in the corner
+        &::after{
+            content: "";
+            display: block;
+            height: 100%;
+            width: $mobileGolden;
+            background: color($highlight, .5);
+            position: absolute;
+            top: 0;
+            right: 0;
+            pointer-events: none;
+            @include gradient(( 0% : color($background, 0), 35% : color($background, .5), 100% : color($background, 1) ), true);           
+        }
+    }
+
+
+    // Specific states 
+    // -- Only text
+    > h1, > h2, > h3, > h4, > p, > strong, > em{
+      &:only-child {
+        width: 100%;
+        display: flex;
+        height: 100%;
+        text-align: center;
+        justify-content: center !important;
+      }
+      &:only-child::after{ content: none; }
+    }
+}
+
+
+/* Header adaptive */
+header.adaptive{
+  @include adaptiveHeader();
+}

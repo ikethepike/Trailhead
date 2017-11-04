@@ -1,0 +1,67 @@
+/*  Generic rules for article content */ 
+// Float padding 
+$floatPadding   : 2rem;
+
+
+// Enable Wordpress specific rules (bluuuuuuhh)
+$wordpress      : false;
+
+.article-content, .article, article.content{
+    p{
+        display: block;
+        margin-bottom: $desktopParagraphMargin;
+        white-space: pre-line;
+        @media #{$mobile}{
+            margin-bottom: $mobileParagraphMargin;
+        }
+    }
+    .left, .right{
+        padding: $desktopParagraphMargin;
+        @media #{$mobile} {
+            padding: $mobileParagraphMargin;   
+        }
+        &::after{
+            @include clear();
+        }
+    }
+    .left{
+        float: left;
+        padding-left: 0;
+    }
+    .right{
+        float: left;
+        padding-right: 0;
+    }
+    img, figure, object, iframe, video, audio, table {
+        width: auto;
+        max-width: 100%;
+    }
+    @if($wordpress){
+        .alignleft, .alignright{
+            position: relative;
+            padding: $floatPadding;
+            clear: both;
+            &::after{
+                content: "";
+                @include clear();
+            }
+        }
+        .alignleft{
+            float: left;
+            padding-left: 0;
+        }
+        .alignright{
+            float: right;
+            padding-right: 0;
+        }
+        .aligncenter{
+            padding: $floatPadding 0;
+            position: relative;
+            text-align: center;
+            > * {
+                display: inline-block;
+                max-width: 100%;
+            }
+        }
+    }
+}

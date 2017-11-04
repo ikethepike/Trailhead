@@ -1,0 +1,38 @@
+/* Adaptive content */
+div.adaptive, main.adaptive, article.adaptive {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+
+    // Variations
+    &.fullscreen { 
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &.space-top, .space-top { 
+        @media #{$desktop} {
+            padding-top: $desktopAdaptiveTop;
+            min-height: calc(100vh - #{$desktopAdaptiveTop});
+        }
+    }
+
+    // Responsive rules 
+    // -- Mobile 
+    @media #{$mobile} {
+        flex-direction: column;    
+        @import "mobile"; 
+    }
+
+    // -- Desktop
+    @media #{$desktop} {
+        flex-flow: row wrap;
+        @import "desktop";
+    }
+    
+
+    // Navbar 
+    @import "navbar/navbar";
+}

@@ -1,0 +1,10 @@
+/* Medium avatars */ 
+
+.avatar.medium, .avatar-medium, .medium-avatar{
+    height: $desktopAvatarMedium;
+    width: $desktopAvatarMedium;
+    @media #{$mobile} {
+        height: $mobileAvatarMedium;
+        width: $mobileAvatarMedium;
+    }
+}

@@ -1,0 +1,9 @@
+/* Some quick rules for creating dimensions */
+
+
+@for $i from 0 through 20 {
+    $dimension  : 100 / $i; 
+
+    .w-#{$dimension}, .width-#{$dimension} { width: $dimension + %; }
+    .h-#{$dimension}, .height-#{$dimension}{ height: $dimension + %; }
+}

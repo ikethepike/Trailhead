@@ -1,0 +1,21 @@
+/* Adaptive is a quick UI and UX structure that can be applied to create unique and compelling interfaces, designed with ♥ by Niklaz Lönnqvist */
+
+// General variables
+
+// -- Navbar width (desktop)
+$navbarMax              : 25%; 
+$navbarMin              : 10rem;
+
+// -- Adaptive (optional) top-spacing 
+$desktopAdaptiveTop     : 15vmin;
+$mobileAdaptiveTop      : 0;
+
+// -- Bottom spacing to content 
+$bottomSpacing          : true;
+
+// Imports 
+// -- Header
+@import "./header/header";
+
+// -- Content 
+@import "./content/content";

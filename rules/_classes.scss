@@ -1,0 +1,26 @@
+/* These are general classes and rules for presentation */
+
+// Positions 
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+// Overflow
+.overflow, .overflow-hidden { overflow: hidden; }
+
+
+// Display none
+.gonzo, .gone {
+    display: none !important;
+}
+
+// Hidden visibility
+.hidden, .no-visibility { visibility: hidden; }
+
+// Cover
+.cover{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}

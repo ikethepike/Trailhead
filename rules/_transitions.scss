@@ -1,0 +1,14 @@
+// General transition rules
+
+// -- Default transition time 
+$shortTransition        : .3s;
+$mediumTransition       : .6s;
+$longTransition         : 1.2s;
+
+// -- General transition 
+$transition             : $mediumTransition;
+
+// Generic classes 
+.hover-invert:hover{
+    filter: invert(100%);
+}

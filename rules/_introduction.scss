@@ -1,0 +1,32 @@
+/* You should disable or delete this import */
+
+$introductionText : 
+"Hail and well met traveller! 
+
+This is a SASS boilerplate aimed at getting you up and running quickly. 
+Let's get started: 
+
+1. Check out _branding.scss in rules, it contains rules for getting your web app styled just right 
+
+2. You can embed new fonts in the _fonts.scss file and style all text elements in _text.scss 
+
+3. It's probably a good idea to check out and get familiar with the _flow.scss, with rules governing the flow and sizing of elements. 
+
+4. Now explore, look around, if you have a need, then chances are that the boilerplate has rules to control it! 
+
+5. Finally, disable this introduction. Good luck out there! 
+
+";
+
+
+
+body::before{
+    content: $introductionText;
+    max-width: 52rem;
+    width: 95%;
+    white-space: pre-wrap;
+    margin: 15vmin auto;
+    font-size: 1.4rem;
+    display: block;
+    animation: slideBlockTop 1s 1;
+}

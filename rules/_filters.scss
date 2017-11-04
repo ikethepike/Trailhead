@@ -1,0 +1,19 @@
+/* These are some quick filters that you can use */
+
+// General Variables
+// -- Activate filters
+$filters        : true;
+
+// Filters
+@if($filters) {
+    @for $i from 1 through 10 {
+        .grayscale-#{$i * 5} { filter: grayscale(10 - $i / 10 ); }
+        .invert-#{$i * 5} { filter: invert(10 - $i / 10); }
+        .saturate-#{$i * 5} { filter: saturate(10 - $i / 10); }
+        .sepia-#{$i * 5} { filter: sepia(10 - $i / 10); }
+        .contrast-#{$i * 5} { filter: contrast($i * 5 + %); }
+        .brightness-#{$i * 5} { filter: brightness($i * 5 + %); }
+        .blur-#{$i} {filter: blur(#{rem($i)}); }
+    }
+}
+
