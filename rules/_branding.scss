@@ -4,12 +4,12 @@
 
 // Universal color rules
 
-$background     : $smoothGray;
+$background     : #252525;
 $color          : #fff;
-$highlight      : $amethyst; 
+$highlight      : $radical;
 
 // Secondary Colors
-$dim            : rgba(0,0,0, .5);
+$dim            : rgba(0,0,0, .8);
 $error          : $aurora-red;
 $success        : $green-flash;
 
@@ -20,11 +20,11 @@ $borderStyle    : solid;
 
 $border         : $borderWidth  $borderStyle $borderColor;
 
-// Highlights
+// HighlightsW
 .highlight, .highlight-color{
     color: $highlight;
     stroke: $highlight;
-} 
+}
 .highlight-bg{
     background-color: $highlight !important;
 }

@@ -1,20 +1,31 @@
 /* You should disable or delete this import */
 
-$introductionText : 
-"Hail and well met traveller! 
+$introductionText :
+"Hail and well met traveller -
 
-This is a SASS boilerplate aimed at getting you up and running quickly. 
-Let's get started: 
+Welcome to Vips, an all-you-can-eat SCSS framework, designed to let you hit the ground running for your next project.
 
-1. Check out _branding.scss in rules, it contains rules for getting your web app styled just right 
+### Starting ###
 
-2. You can embed new fonts in the _fonts.scss file and style all text elements in _text.scss 
+You can change the visual identity of the site quickly in _branding.scss, it contains the rules you need to get your app styled just right.
+While your at it, you may want to take a look at text styling in _text.scss and fonts in _fonts.scss.
+It's probably also a good idea to get acquainted to and familiar with _flow.scss, the file that controls the flow and sizing of content in your app.
+Finally, it might be a good idea to just browse around the files in rules, like operations, which contains all the mixins and functions you might need.
+When you feel comfortable to start, just go ahead and disable this introduction in _rules.scss.
 
-3. It's probably a good idea to check out and get familiar with the _flow.scss, with rules governing the flow and sizing of elements. 
+Good luck out there!
 
-4. Now explore, look around, if you have a need, then chances are that the boilerplate has rules to control it! 
+### Structure ###
 
-5. Finally, disable this introduction. Good luck out there! 
+Vips is built upon a four tiered hierarchy - rules, templates, pages, elements. Rules sit above everything, an abstract layer that governs the entire app. Templates are the broadest possible category, usable across multiple pages/views and able to contain many elements, even pages. Pages are more specific, these are larger wrappers for specific pages, that also may contain several blocks from elements. Finally, elements are the smallest node, and are rather more unique like site headers and the like.
+
+### Disclaimer ###
+
+Vips is Still in early Alpha, and as of such you should expect some rough edges.
+
+Zip and questions, comments or complaints to @ikethepike
+
+
 
 ";
 
@@ -22,11 +33,12 @@ Let's get started:
 
 body::before{
     content: $introductionText;
-    max-width: 52rem;
+    max-width: $readingFlow;
     width: 95%;
     white-space: pre-wrap;
     margin: 15vmin auto;
-    font-size: 1.4rem;
     display: block;
+    border: $border;
+    color: $color;
     animation: slideBlockTop 1s 1;
 }

@@ -19,7 +19,7 @@ $grid               : false;
 $gridSize           : calc(100vw / 100);
 
 // -- Choose a color for the gridlines
-$gridColor          : tomato;
+$gridColor          : $amethyst;
 
 
 // Illustrate size differences between devices
@@ -70,8 +70,8 @@ $deviceOverlays     : false;
     }
 }
 
-// Device overlays
 
+// Device overlays
 @if($deviceOverlays ){
     body {
         &::after, &::before{
