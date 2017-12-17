@@ -1,0 +1,108 @@
+/*
+* Animations
+* Quick, reusable animations
+*/
+
+// Slides
+// -- ("direction" 	: ("desktop distance", "mobile distance"))
+// $slide-animations : ("top" : (5rem, 2.5rem), "right" : (5rem, 2.5rem), "bottom" : (5rem, 2.5rem), "left"	: (5rem, 2.5rem));
+$slide-animations: false;
+
+@if ($slide-animations) {
+  @each $direction, $distances in $slide-animations {
+    @media #{$desktop} {
+      @keyframes slide-#{$direction} {
+        0% {
+          margin-#{$direction}: nth($property, 1);
+        }
+        100% {
+          margin-#{$direction}: 0;
+        }
+      }
+    }
+
+    @media #{$mobile} {
+      @keyframes slide-#{$direction} {
+        0% {
+          margin-#{$direction}: nth($property, 2);
+        }
+        100% {
+          margin-#{$direction}: 0;
+        }
+      }
+    }
+  }
+}
+
+// Fades
+$fades: false;
+
+@if ($fades) {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+// Color animations
+$color-animations: false;
+
+@if ($color-animations) {
+  @keyframes color-from-white {
+    0% {
+      color: #fff;
+    }
+  }
+  @keyframes color-from-black {
+    0% {
+      color: #000;
+    }
+  }
+  @keyframes color-from-highlight {
+    0% {
+      color: $highlight;
+    }
+  }
+}
+
+// Dot dot dot effect
+$blink: false;
+
+@if ($blink) {
+  @keyframes blink {
+    0% {
+      opacity: 0.2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+
+  // Highlight pulse
+  @keyframes highlight-pulse {
+    25% {
+      color: inherit;
+    }
+    50% {
+      color: $highlight;
+    }
+    75% {
+      color: inherit;
+    }
+  }
+}

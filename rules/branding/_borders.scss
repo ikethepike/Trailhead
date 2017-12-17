@@ -1,0 +1,19 @@
+/*
+* Borders
+* This file codes for the appearance of general borders in your app
+*/
+
+// General border
+$border-width: 0.0625rem;
+$border-color: #fff;
+$border-style: solid;
+
+// -- General border variable
+$border: $border-width $border-style $border-color;
+
+// Variations
+// -- Error border
+$error-border: $border-width $border-style $error;
+
+// -- Success border
+$success-border: $border-width $border-style $success;

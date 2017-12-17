@@ -1,25 +1,25 @@
 /* Adaptive desktop */
 
-// Content pane 
-> .content, > main {
-    display: flex;
-    flex-flow: row nowrap;
-    width: 100%;
-    position: relative;
-    @media screen and (min-width: 90rem) {
-        &.center::after, &.centered::after{
-            content: "";
-            width: 100%;
-            height: 0.1rem;
-            min-width: $navbarMin;
-            max-width: $navbarMax;
-            display: block;
-        }
+// Content pane
+> .content,
+> main {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  position: relative;
+  @media screen and (min-width: 90rem) {
+    &.center::after,
+    &.centered::after {
+      content: '';
+      width: 100%;
+      height: 0.1rem;
+      min-width: $navbarMin;
+      max-width: $navbarMax;
+      display: block;
     }
-    
+  }
 
-    @if($bottomSpacing){
-        padding-bottom: $desktopGolden;
-    }
+  @if ($bottomSpacing) {
+    padding-bottom: $desktop-golden;
+  }
 }
-

@@ -1,0 +1,110 @@
+/*
+* Spacing rules 
+* This document contains rules for quick spacing between elememnts
+*/
+
+// Default spacing between element such as items in a nav
+// -- Desktop
+$desktop-standard-margin-x: 2rem;
+$desktop-standard-margin-y: 2rem;
+
+// -- Mobile
+$mobile-standard-margin-x: 1.5rem;
+$mobile-standard-margin-y: 1.5rem;
+
+// Magic Margins
+// Magic margins are specific spacings applied to specific selectors
+
+$magic-margins: false;
+
+// -- Desktop magic margins
+$desktop-magic: (
+  '.slide-block' : ('bottom', 2rem),
+  'address' : ('left', 1rem)
+);
+
+// -- Mobile magic margins
+$mobile-magic: (
+  '.slide-block' : ('bottom', 1rem),
+  'address' : ('left', 0.5rem)
+);
+
+// Classes
+// -- Desktop
+@media #{$desktop} {
+  .margin-top {
+    margin-top: $desktop-standard-margin-y;
+  }
+  .margin-bottom {
+    margin-bottom: $desktop-standard-margin-y;
+  }
+  .margin-left {
+    margin-left: $desktop-standard-margin-x;
+  }
+  .margin-right {
+    margin-right: $desktop-standard-margin-x;
+  }
+
+  // Marginify
+  .marginify-top > * {
+    margin-top: $desktop-standard-margin-y;
+  }
+  .marginify-bottom > * {
+    margin-bottom: $desktop-standard-margin-y;
+  }
+  .marginify-left > * {
+    margin-left: $desktop-standard-margin-x;
+  }
+  .marginify-right > * {
+    margin-right: $desktop-standard-margin-x;
+  }
+}
+
+// -- Mobile
+@media #{$mobile} {
+  .margin-top {
+    margin-top: $mobile-standard-margin-y;
+  }
+  .margin-bottom {
+    margin-bottom: $mobile-standard-margin-y;
+  }
+  .margin-left {
+    margin-left: $mobile-standard-margin-x;
+  }
+  .margin-right {
+    margin-right: $mobile-standard-margin-x;
+  }
+
+  // Marginify
+  .marginify-top > * {
+    margin-top: $mobile-standard-margin-y;
+  }
+  .marginify-bottom > * {
+    margin-bottom: $mobile-standard-margin-y;
+  }
+  .marginify-left > * {
+    margin-left: $mobile-standard-margin-x;
+  }
+  .marginify-right > * {
+    margin-right: $mobile-standard-margin-x;
+  }
+}
+
+// -- Let the magic happen
+@if ($magic-margins) {
+  @media #{$mobile} {
+    @each $selector, $properties in $mobile-magic {
+      #{$selector} {
+        margin-#{nth($properties, 1)}: nth($properties, 2);
+      }
+    }
+  }
+
+  @media #{$desktop} {
+    @each $selector, $properties in $desktop-magic {
+      #{$selector} {
+        margin-#{nth($properties, 1)}: nth($properties, 2);
+      }
+    }
+  }
+}

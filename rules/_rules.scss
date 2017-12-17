@@ -1,54 +1,22 @@
- /* Rules */
+/* Rules */
 
- // -- Introduction (disable me)
- @import "introduction";
-
-// -- Reset
-@import 'reset';
-
-// -- Mixins, functions
-@import 'operations';
+// -- Core
+@import 'core/core';
 
 // -- Branding
-@import 'branding';
+@import 'branding/branding';
 
 // -- Content flow rules
-@import 'flow';
+@import 'flow/flow';
 
 // -- Fonts and text headings
-@import 'text';
+@import 'text/text';
 
-// -- Icon rules and colors
-@import "icons";
+// -- Debug
+@import 'debugging/debugging';
 
-// -- Spacing (margins and padding)
-@import "spacing";
-
-// Body and blocks (Slide blocks etc)
-@import 'blocks';
-
-// -- Generic flex rules
-@import "flex";
-
-// -- Generic class rules
-@import "classes";
-
-// -- Dimensions
-@import "dimensions";
-
-// -- Default transitions and classes 
-@import "transitions";
-
-// -- Generic tranformations
-@import "transformations";  
-
-// -- Filters 
-@import "filters";
-
-// -- Debug 
-@import "debug";
+// -- Scroll
+@import 'scroll';
 
 // -- Body
 @import 'body';
-
-

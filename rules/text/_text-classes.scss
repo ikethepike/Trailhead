@@ -1,0 +1,26 @@
+/*
+* General text classes
+* This file contains re-usable text classes
+*/
+
+// Font weights
+.bold {
+  font-weight: 700;
+}
+.italic {
+  font-style: italic;
+}
+.light {
+  font-weight: 300;
+}
+
+// Text transforms
+.capitalize {
+  text-transform: capitalize;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.uppercase {
+  text-transform: uppercase;
+}

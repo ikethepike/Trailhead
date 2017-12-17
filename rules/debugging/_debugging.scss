@@ -1,0 +1,144 @@
+/*
+* Debugging
+* This file contains tools for rapid debugging
+*/
+
+// Wireframes
+$wireframes: false;
+
+// -- Levels of wireframes
+$wireframe-depth: 4;
+
+// -- Hover debugging
+$wireframe-hover: false;
+
+// -- Enable or disable grid
+$grid: false;
+
+// -- Choose a size for the grid
+$grid-size: calc(100vw / 100);
+
+// -- Choose a color for the gridlines
+$grid-color: tomato;
+
+// Illustrate size differences between devices
+$device-overlays: false;
+
+// -- Create wireframes
+@if ($wireframes) {
+  // -- Don't touch me
+  $debug-selector: '';
+
+  body {
+    &::before {
+      content: 'Debugging mode active';
+      background: red;
+      text-align: center;
+      display: block;
+      padding: 0.5rem 0;
+      position: fixed;
+      top: -100%;
+      width: 100%;
+      z-index: 10000;
+      animation: debug 5s 1;
+      color: #fff;
+      font-family: monospace;
+    }
+    @for $i from 0 through $wireframe-depth {
+      $debug-selector: str-insert($debug-selector, '> * ', $i * 4);
+      #{$debug-selector} {
+        outline: 1px solid random-color();
+        &:hover {
+          outline-style: dashed;
+          @if ($wireframe-hover) {
+            position: relative;
+            &::before {
+              content: 'depth-#{$i - 1}';
+              top: 0;
+              left: 0;
+              position: absolute;
+              background: red;
+              color: #fff;
+              font-family: monospace;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Device overlays
+@if ($device-overlays) {
+  body {
+    &::after,
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10000;
+    }
+    &::after {
+      width: 1440px;
+      height: 900px;
+      outline: 2px dotted $grid-color;
+    }
+    &::before {
+      width: 375px;
+      height: 667px;
+      outline: 2px dotted lighten($grid-color, 20%);
+    }
+  }
+}
+
+@keyframes debug {
+  0% {
+    top: -100%;
+  }
+  25% {
+    top: 0;
+  }
+  75% {
+    top: 0;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+// Grid
+@if ($grid) {
+  html body {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: auto;
+      background-color: transparent;
+      display: block;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    &::before {
+      background-image: linear-gradient(
+        90deg,
+        #{color($gridColor, 0.2)} 1px,
+        transparent 1px
+      );
+      background-size: #{$grid-size} 100%;
+    }
+    &::after {
+      background-size: 100% #{$grid-size};
+      background-image: linear-gradient(
+        #{color($gridColor, 0.2)} 1px,
+        transparent 1px
+      );
+    }
+  }
+}

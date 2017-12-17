@@ -1,0 +1,32 @@
+/*
+* Quick transformations
+* Quick transformation rules for scaffolding layouts
+*/
+
+// Enabled transformations
+// -- Rotate
+$rotations: true;
+
+// -- Translations
+$translations: true;
+
+// -- Rotate
+@if ($rotations) {
+  @for $i from 1 through 8 {
+    .rotate-#{$i * 45} {
+      transform: rotate(#{$i * 45}deg);
+    }
+  }
+}
+
+// -- Translate
+@if ($translations) {
+  @for $i from 1 through 10 {
+    .translate-x-#{$i} {
+      transform: translateX(#{$i + rem});
+    }
+    .translate-y-#{$i} {
+      transform: translateY(#{$i + rem});
+    }
+  }
+}

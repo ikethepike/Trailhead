@@ -1,0 +1,42 @@
+/* 
+* Inputs and textareas
+* These files contain all the necessary styling rules for input elements 
+* and textareas. 
+*/
+
+// General settings for inputs and textareas
+// -- Input heights
+$desktop-input-height: 3.5rem;
+$mobile-input-height: 3rem;
+
+// -- Textarea heights
+$desktop-textarea-height: 7rem;
+$mobile-textarea-height: 6rem;
+
+// -- Input text
+// -- -- Font-Family
+$input-font-family: $body-font;
+
+// -- -- Font sizes
+$desktop-input-font-size: $desktop-body-size;
+$mobile-input-font-size: $mobile-body-size;
+
+// Bind it up
+input:not(input[type='submit']),
+textarea {
+  font-family: $input-font-family;
+  min-height: $desktop-input-height;
+  font-size: $desktop-input-font-size;
+  @media #{$mobile} {
+    min-height: $mobile-input-height;
+    font-size: $mobile-input-font-size;
+  }
+}
+
+// Imports
+// -- Text inputs
+@import 'text-inputs';
+// -- Text area
+@import 'textarea';
+// -- Checkbox
+@import 'checkbox';

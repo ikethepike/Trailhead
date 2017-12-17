@@ -1,0 +1,41 @@
+/*
+* General Buttons and submit elements
+* These rules define the styling of general button elements
+*/
+
+// Button settings
+// -- Sizes
+$desktop-button-size: 3.5rem;
+$mobile-button-size: 3rem;
+
+.button,
+button,
+input[type='submit'] {
+  display: inline-block;
+  border: $border;
+  background-color: transparent;
+  color: $border-color;
+  transition: background 0.4s;
+  height: $desktop-button-size;
+  // States
+  // -- Hover
+  &:hover {
+    background-color: $border-color;
+    color: black-or-white($border-color);
+  }
+  // -- Error
+  &.error {
+    border-color: $error;
+    background: $error;
+  }
+  // -- Success
+  &.success {
+    border-color: $success;
+    background: $success;
+  }
+
+  // Media queries
+  @media #{$mobile} {
+    height: $mobile-button-size;
+  }
+}

@@ -1,0 +1,16 @@
+/* 
+* Blocks
+* Blocks are reusable animation blocks, used to spice up your app
+*/
+
+// Block settings
+// -- Amount of blocks to animate
+$animation-blocks: 20;
+
+// Imports
+// -- Slide blocks
+@import 'slide-blocks';
+// -- Opacity blocks
+@import 'opacity-blocks';
+// -- Rotation blocks
+@import 'rotation-blocks';

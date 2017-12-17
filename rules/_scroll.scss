@@ -1,17 +1,28 @@
 /* These are rulesets for applying scrollblocks to different elements */
 
 // Generic scroll rules
-.scroll-x { overflow-x: auto; }
-.scroll-y { overflow-y: auto; }
-
-// Hide scrollbar mixin
-@mixin hide-scrollbar()
-{
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    &::-webkit-scrollbar, &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-thumb:hover, &::-webkit-scrollbar-thumb:window-inactive, *::-webkit-scrollbar, *::-webkit-scrollbar-track, *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:hover, *::-webkit-scrollbar-thumb:window-inactive {
-        visibility: hidden;
-        width: 0;
-        display: none;
-    }
+.scroll-x {
+  overflow-x: auto;
+}
+.scroll-y {
+  overflow-y: auto;
 }
 
+// Hide scrollbar mixin
+@mixin hide-scrollbar() {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb:hover,
+  &::-webkit-scrollbar-thumb:window-inactive,
+  *::-webkit-scrollbar,
+  *::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-thumb,
+  *::-webkit-scrollbar-thumb:hover,
+  *::-webkit-scrollbar-thumb:window-inactive {
+    visibility: hidden;
+    width: 0;
+    display: none;
+  }
+}

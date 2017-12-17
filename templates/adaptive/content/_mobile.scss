@@ -1,12 +1,13 @@
 /* Mobile adaptive content */
-> .content, > main {
-    > *:not(.content-flow):not(.reading-flow){
-        width: $mobileFlow;
-        margin-left: auto;
-        margin-right: auto;
-    }
+> .content,
+> main {
+  > *:not(.content-flow):not(.reading-flow) {
+    width: $mobile-flow;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    @if($bottomSpacing){
-        padding-bottom: $mobileGolden;
-    }
+  @if ($bottomSpacing) {
+    padding-bottom: $mobile-golden;
+  }
 }

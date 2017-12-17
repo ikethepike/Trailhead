@@ -1,0 +1,72 @@
+/*
+* Font imports
+* This file contains all necessary rules to import fonts,
+* both for local fonts and from third party sources like 
+* Google fonts. It also binds up common fonts to variables.
+*/
+
+/* Google font options */
+// -- Example: $google-fonts : ('Montserrat' : "400,600", "Roboto" : '300i,800');
+
+$googleFonts: false;
+
+@if ($googleFonts) {
+  @each $weights, $font in $googleFonts {
+    @import url(#{'https://fonts.googleapis.com/css?family=' + str-replace($font, ' ', '+') + ':' + str-replace($weights, ' ', ',')  });
+  }
+}
+
+/* Local font file embed
+* Local file embeds presuppose a folder in assets called fonts, to generate necessary font files: https://transfonter.org/
+*                            *name*: *weight*, *filename*, *style*;
+* -- Example: $localFonts : ('Montserrat' : (400, 'Montserrat-SemiBold', "normal"))
+*
+*/
+$localFonts: false;
+
+@if ($localFonts) {
+  @each $name, $properties in $localFonts {
+    @font-face {
+      font-family: $name;
+      src: url('../fonts/#{nth($properties, 2)}.eot');
+      src: url('../fonts/#{nth($properties, 2)}.eot?#iefix')
+          format('embedded-opentype'),
+        url('../fonts/#{nth($properties, 2)}.woff2') format('woff2'),
+        url('../fonts/#{nth($properties, 2)}.woff') format('woff'),
+        url('../fonts/#{nth($properties, 2)}.ttf') format('truetype');
+      font-weight: nth($properties, 1);
+      font-style: nth($properties, 3);
+    }
+  }
+}
+
+// Font variables
+// -- System fonts
+$system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+// -- Monospace
+$monospace: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+  'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+  'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+// -- Franklin gothic
+$franklin: 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic',
+  Arial, sans-serif;
+// -- Futura
+$futura: Futura, 'Trebuchet MS', Arial, sans-serif;
+// -- Bodoni
+$bodoni: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond,
+  'Times New Roman', serif;
+// -- Roboto
+$roboto: 'Roboto', sans-serif;
+// -- Open sans
+$opensans: 'Open Sans', sans-serif;
+// -- Oswaldd
+$oswald: 'Oswald', sans-serif;
+// -- Playfair
+$playfair: 'Playfair Display', serif;
+// -- Montserrat
+$montserrat: 'Montserrat', sans-serif;
+// -- Arial
+$arial: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+// -- Georgia
+$georgia: Georgia, Times, 'Times New Roman', serif;

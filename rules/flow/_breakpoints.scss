@@ -1,0 +1,13 @@
+// Breakpoints for media queries
+// -- Tiny devices
+$tiny: 'screen and (max-width: 30rem)';
+// -- Mobile devices
+$mobile: 'screen and (max-width: 60rem)';
+// -- Anything mobile
+$desktop: 'screen and (min-width: 60rem)';
+// -- Tablet
+$tablet: 'screen and (min-width: 48rem) and (max-width: 75rem)';
+// -- Small laptop
+$laptop: 'screen and (min-width: 60rem) and (max-width: 120rem)';
+// -- High resolution device
+$retina: 'screen and (min-width: 120rem)';

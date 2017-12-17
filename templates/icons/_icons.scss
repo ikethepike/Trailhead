@@ -1,0 +1,60 @@
+/*
+* Icon rules 
+* Rules for SVG icons
+*/
+
+// Icon settings
+// -- Auto size icons?
+$auto-size: false;
+
+// -- Stroke over fill?
+$stroke: true;
+
+// -- Icon Sizings
+$desktop-icon-size: 2.5rem;
+$mobile-icon-size: 2rem;
+
+// -- Colors
+$icon-color: $body-color;
+$icon-hover: $highlight;
+
+// -- Canvas (only applicable if auto-size )
+$desktopIconCanvas: 3rem;
+$mobileIconCanvas: 2.5rem;
+
+svg {
+  @if $stroke {
+    stroke: $icon-color;
+  } @else {
+    fill: $icon-color;
+  }
+}
+
+// Generic classes
+
+@if ($auto-size) {
+  .icon {
+    box-sizing: content-box;
+    width: $desktop-icon-size;
+    height: $desktop-icon-size;
+    padding: ($desktopIconCanvas - $desktop-icon-size) / 2;
+    position: relative;
+    @media #{$mobile} {
+      width: $mobile-icon-size;
+      height: $mobile-icon-size;
+      padding: ($mobileIconCanvas - $mobileIconCanvas) / 2;
+    }
+  }
+}
+
+// Icon Hover
+@if ($icon-hover) {
+  .icon-hover {
+    @if ($stroke) {
+      stroke: $icon-hover;
+    }
+    else {
+      fill: $icon-hover;
+    }
+  }
+}

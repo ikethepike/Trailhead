@@ -1,0 +1,62 @@
+/*
+* Body text 
+* This file controls how body text looks, including labels and small elements
+*/
+
+// Body settings
+// -- Font family
+$body-font: $system;
+
+// -- Sizes
+$desktop-body-size: 1rem;
+$mobile-body-size: 0.9rem;
+
+// -- Line height
+$desktop-body-line-height: 150%;
+$mobile-body-line-height: 130%;
+
+// -- Color
+$body-color: if(lightness($background) > 50, #000, #fff);
+
+// Paragraph settings
+$desktop-paragraph-margin: 2rem;
+$mobile-paragraph-margin: 1.5rem;
+
+@mixin bodyText() {
+  font-family: $body-font;
+  font-size: $desktop-body-size;
+  line-height: $desktop-body-line-height;
+  color: $body-color;
+  @media #{$mobile} {
+    font-size: $mobile-body-size;
+    line-height: $mobile-body-line-height;
+  }
+}
+
+// Check deferred to body
+@if ($defer-body) {
+  body {
+    @include bodyText();
+  }
+} @else {
+  p,
+  a,
+  li,
+  ol,
+  ul,
+  b,
+  i,
+  em,
+  strong,
+  label {
+    @include bodyText();
+  }
+}
+
+p {
+  display: inline-block;
+  margin-bottom: $desktop-paragraph-margin;
+  @media #{$mobile} {
+    margin-bottom: $mobile-paragraph-margin;
+  }
+}

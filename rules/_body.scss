@@ -1,26 +1,39 @@
-/* These rules control the body and html elements of the app */
-// General vars
-// -- Hide scrollbars?
-$hideScroll     : false;
+/*
+* Body 
+* Control the styling of the body element
+*/
 
-html, body {
-    @if($hideScroll){
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-        &::-webkit-scrollbar, &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-thumb:hover, &::-webkit-scrollbar-thumb:window-inactive, *::-webkit-scrollbar, *::-webkit-scrollbar-track, *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb:hover, *::-webkit-scrollbar-thumb:window-inactive {
-            visibility: hidden;
-            width: 0;
-            display: none;
-        }
-    }
+// Body settings
+// -- Hide scrollbars?
+$hide-scroll: false;
+
+// Body
+body {
+  position: relative;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: $background;
+  min-height: 100vh;
 }
 
-//  Body
-body{
-    position: relative;
-    max-width: 100vw;
-    overflow-x: hidden;
-    font-family: $bodyFont;
-    background: $background;
-    min-height: 100vh;
-    color: $bodyColor;
+// Scrollbars?
+html,
+body {
+  @if ($hide-scroll) {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb,
+    &::-webkit-scrollbar-thumb:hover,
+    &::-webkit-scrollbar-thumb:window-inactive,
+    *::-webkit-scrollbar,
+    *::-webkit-scrollbar-track,
+    *::-webkit-scrollbar-thumb,
+    *::-webkit-scrollbar-thumb:hover,
+    *::-webkit-scrollbar-thumb:window-inactive {
+      visibility: hidden;
+      width: 0;
+      display: none;
+    }
+  }
 }

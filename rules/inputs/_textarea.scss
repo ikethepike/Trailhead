@@ -1,0 +1,17 @@
+/*
+* Textarea
+* Styling rules for how textareas look
+*
+*/
+
+textarea,
+.textarea {
+  resize: none;
+  height: $desktop-textarea-height;
+  border: none;
+  background: #fff;
+  color: #000;
+  @media #{$mobile} {
+    height: $mobile-textarea-height;
+  }
+}

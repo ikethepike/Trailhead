@@ -1,0 +1,11 @@
+// Avatar medium
+
+.avatar-medium,
+.medium-avatar {
+  height: $desktop-avatar-medium;
+  width: $desktop-avatar-medium;
+  @media #{$mobile} {
+    height: $mobile-avatar-medium;
+    width: $mobile-avatar-medium;
+  }
+}

@@ -1,0 +1,49 @@
+/* 
+* Rotation block 
+* The rotation block is just a ismiple fade block, that fades in from 0 rotation 
+*/
+
+// Rotation block settings
+// -- Base time
+$rotation-block-base-time: 0.25s;
+
+.rotation-block {
+  animation-iteration-count: 1;
+  animation-name: rotateBlockRight;
+  will-change: transform;
+}
+.rotation-block-right,
+.rotation-block-clockwise {
+  animation-name: rotateBlockRight;
+}
+.rotation-block-left,
+.rotation-block-counter-clockwise {
+  animation-name: rotateBlockLeft;
+}
+
+@for $i from 1 through $animation-blocks {
+  .rotation-block:nth-child(#{$i}) {
+    animation-duration: #{$i * $rotation-block-base-time};
+  }
+}
+
+// Animation
+// -- Clockwise (right)
+@keyframes rotateBlockRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// -- Counter clockwise (left)
+@keyframes rotateBlockRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

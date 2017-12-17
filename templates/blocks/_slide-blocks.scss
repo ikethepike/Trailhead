@@ -1,0 +1,77 @@
+/* 
+* Slide blocks
+* These blocks slide in a given direction
+*/
+
+// Slide block settings
+// -- Base time
+$slide-block-base-time: 0.33s;
+
+.slide-block {
+  position: relative;
+  animation-iteration-count: 1;
+  animation-name: slideBlockTop;
+  will-change: transform;
+}
+.slide-block-left {
+  animation-name: slideBlockLeft;
+}
+.slide-block-right {
+  animation-name: slideBlockRight;
+}
+.slide-block-bottom {
+  animation-name: slideBlockBottom;
+}
+
+// Set timings
+@for $i from 1 through $animation-blocks {
+  .slide-block:nth-child(#{$i}) {
+    animation-duration: #{$i * $slide-block-base-time};
+  }
+}
+
+// Animations
+// -- Top
+@keyframes slideBlockTop {
+  0% {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+// -- Left
+@keyframes slideBlockLeft {
+  0% {
+    transform: translateX(5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+// -- Right
+@keyframes slideBlockRight {
+  0% {
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+// -- Bottom
+@keyframes slideBlockBottom {
+  0% {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

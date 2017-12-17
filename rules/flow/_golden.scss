@@ -1,0 +1,18 @@
+/*
+* Golden rules
+* These are the golden ratio rules for Fishbone,
+* these are a sort of base-building block, entirely optional
+*/
+
+// Sizes
+$desktop-golden: 5rem;
+$mobile-golden: 2.5rem;
+
+.golden {
+  width: $desktop-golden;
+  height: $desktop-golden;
+  @media #{$mobile} {
+    width: $mobile-golden;
+    height: $mobile-golden;
+  }
+}

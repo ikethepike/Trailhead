@@ -1,0 +1,11 @@
+/*
+* Horizontal Rule 
+* All styling for horizontal rules
+*/
+
+hr,
+.hr {
+  border: none;
+  border-bottom: $border;
+  display: block;
+}

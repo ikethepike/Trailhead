@@ -1,0 +1,61 @@
+/*
+* Functions
+* These are add-in functions that enable Fishbone to work
+*/
+
+// -- Replace in string
+@function str-replace($string, $search, $replace : '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// Convert px to EM
+@function em($pixels) {
+  @return strip-unit($pixels) / 16 + em;
+}
+// convert px to REM
+@function rem($pixels) {
+  @return strip-unit($pixels) / 16 + rem;
+}
+// -- Strip unit
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// -- Find what percent the child comprises of the parent
+@function percent($parent, $child) {
+  @return ($child / $parent) * 100 + %;
+}
+
+// -- Convert points to rem
+@function pt-em($pt) {
+  @return strip-unit($pt) / 12 + rem;
+}
+
+// -- Returns a random color
+@function random-color() {
+  @return rgb( random(255) - 1, random(255) - 1, random(255) - 1);
+}
+
+// -- Returns number to the power of
+@function power($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+// -- Invert color to the optimal black or white color against input color
+@function black-or-white($color) {
+  @return if(lightness($color) > 50, #000, #fff);
+}

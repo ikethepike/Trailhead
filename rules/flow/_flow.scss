@@ -1,0 +1,52 @@
+/*
+* Flow
+* These are the general rules for how the app "flows",
+* from the way that content spans the page, to the sizing 
+* of a paragraph. These rules determine the widths that make 
+* up your new app. 
+*/
+
+// Imports
+// -- Breakpoints
+@import 'breakpoints';
+// -- Golden
+@import 'golden';
+
+// Flow settings
+// -- Content flow (the big one)
+$desktop-flow: 90%;
+$mobile-flow: 95%;
+
+// -- Reading flow
+$reading-flow: 52rem;
+
+// -- Margins
+$desktop-margin: (100% - $desktop-flow) / 2;
+$mobile-margin: (100% - $mobile-flow) / 2;
+
+// -- Max widths
+$desktop-max: 100%;
+$mobile-max: 100%;
+
+// Flow classes
+// -- Content flow
+.content-flow {
+  width: $desktop-flow;
+  max-width: $desktop-max;
+  margin: 0 auto;
+  @media #{$mobile} {
+    width: $mobile-flow;
+    max-width: $mobile-max;
+  }
+}
+
+// -- Reading flow
+.reading-flow {
+  width: 100%;
+  max-width: $reading-flow;
+  margin: 0 auto;
+  position: relative;
+  @media #{$mobile} {
+    max-width: $mobile-flow;
+  }
+}

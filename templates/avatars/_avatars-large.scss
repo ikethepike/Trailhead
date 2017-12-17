@@ -1,0 +1,10 @@
+/* Large avatars */
+
+.avatar-large {
+  height: $desktop-avatar-large;
+  width: $desktop-avatar-large;
+  @media #{$mobile} {
+    height: $mobile-avatar-large;
+    width: $mobile-avatar-large;
+  }
+}

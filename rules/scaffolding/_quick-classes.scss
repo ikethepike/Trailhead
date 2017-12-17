@@ -1,0 +1,65 @@
+/*
+* Quick classes
+* These are classes that can be rapidly used in scaffolding out layouts
+*/
+
+// Positions
+// -- Relative
+.relative {
+  position: relative;
+}
+// -- Absolute
+.absolute {
+  position: absolute;
+}
+// -- Sticky
+.sticky {
+  position: sticky;
+}
+// -- Fixed
+.fixed {
+  position: fixed;
+}
+
+// -- Internal positionings
+.sticky,
+.fixed {
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}
+
+// Overflow
+.overflow {
+  overflow: hidden;
+}
+
+// Display none
+.gonzo,
+.gone {
+  display: none !important;
+}
+
+// Hidden visibility
+.hidden,
+.no-visibility {
+  visibility: hidden;
+}
+
+// Cover
+.cover {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}

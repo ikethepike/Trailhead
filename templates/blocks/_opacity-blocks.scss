@@ -1,0 +1,27 @@
+/* 
+* Opacity block 
+* The opacity block is just a ismiple fade block, that fades in from 0 opacity 
+*/
+
+// Opacity block settings
+// -- Base time
+$opacity-block-base-time: 0.4s;
+
+.opacity-block {
+  animation-iteration-count: 1;
+  animation-name: opacity-block;
+  will-change: opacity;
+}
+
+@for $i from 1 through $animation-blocks {
+  .opacity-block:nth-child(#{$i}) {
+    animation-duration: #{$i * $opacity-block-base-time};
+  }
+}
+
+// Animation
+@keyframes opacity-block {
+  0% {
+    opacity: 0;
+  }
+}

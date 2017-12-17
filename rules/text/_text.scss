@@ -1,0 +1,25 @@
+/*
+* Text and font rules 
+* These are rules for text and fonts in your app, 
+* here you can import, style and set text classes.
+*/
+
+// Text Settings
+// -- Defer to body
+$defer-body: true;
+
+// Imports
+// -- Font imports
+@import 'fonts';
+// -- Headings
+@import 'headings';
+// -- Body text
+@import 'body-text';
+// -- Text classes
+@import 'text-classes';
+// -- Anchor
+@import 'anchor';
+// -- Labels
+@import 'labels';
+// -- Horizontal Rules (HRs)
+@import 'hr';

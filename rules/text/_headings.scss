@@ -1,0 +1,109 @@
+/*
+* Headings
+* This file contains the styling rules for headings
+*/
+
+// Heading settings
+// -- Font Family
+$heading-font-family: $system;
+$heading-color: if(lightness($background) > 50, #000, #fff);
+
+// -- Sizes
+$desktop-heading-size: 4rem;
+$mobile-heading-size: 2.5rem;
+
+// -- Weight
+$desktop-heading-weight: 700;
+$mobile-heading-weight: 700;
+
+// -- Line Height
+$desktop-heading-line-height: 120%;
+$mobile-heading-line-height: 110%;
+
+@mixin heading() {
+  display: inline-block;
+  color: $heading-color;
+  font-family: $heading-font-family;
+  font-size: $desktop-heading-size;
+  font-weight: $desktop-heading-weight;
+  line-height: $desktop-heading-line-height;
+  @media #{$mobile} {
+    font-size: $mobile-heading-size;
+    font-weight: $mobile-heading-weight;
+    line-height: $mobile-heading-line-height;
+  }
+  // Child fix
+  a,
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading();
+}
+
+/*
+* Size constructor
+* You can set an array of sizes to construct custom sizes for each element e.g:
+* $desktop-headings : ( 1 : $desktop-heading-size, 2 : 3rem, 3 : 2.5rem )
+* $mobile-headings  : (1 : $mobile-heading-size, 2 : 2rem, 3 : 1.8rem)
+* 
+* Defaults to off
+*/
+
+// Sizings
+// -- Arrays
+$desktop-headings: false;
+$mobile-headings: false;
+
+// -- Automatic decrease
+$desktop-decrease: 0.75;
+$mobile-decrease: 0.75;
+
+// Sizers
+// -- Desktop
+// --  Construct sizes from desktop array, else decrease size by desktop-decrease
+@media #{$desktop} {
+  @if ($desktop-headings) {
+    // Array sizing
+    @each $level, $size in $desktop-headings {
+      #{'h' + $level} {
+        font-size: $size;
+      }
+    }
+  } @else {
+    // Automatic sizing
+    @for $heading from 2 through 7 {
+      #{'h' + $heading} {
+        font-size: $desktop-heading-size * power($heading, $desktop-decrease);
+      }
+    }
+  }
+}
+
+// -- Mobile
+// -- Construct sizes from mobile array, else decrease size by mobile-decrease
+@media #{$mobile} {
+  @if ($mobile-headings) {
+    // Array sizing
+    @each $level, $size in $mobile-headings {
+      #{'h' + $level} {
+        font-size: $size;
+      }
+    }
+  } @else {
+    // Automatic sizing
+    @for $heading from 2 through 7 {
+      #{'h' + $heading} {
+        font-size: $mobile-heading-size * power($heading, $mobile-decrease);
+      }
+    }
+  }
+}

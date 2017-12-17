@@ -12,14 +12,18 @@
  
  */
 
-/* Rules */ 
-@import "rules/rules";
+// Initialize framework
+// -- Rules
+@import 'rules/rules';
 
-/* Templates */
-@import "templates/templates";
+// -- Templates
+@import 'templates/templates';
 
- /* Pages */
-@import "pages/pages";
+// -- Views/pages
+@import 'views/views';
 
- /* Elements */ 
-@import "elements/elements";
+// -- Elements
+@import 'elements/elements';
+
+// -- Introduction
+@import 'introduction';

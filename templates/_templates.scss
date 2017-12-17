@@ -1,13 +1,25 @@
-/* Templates are large scale, reusable sitewide blocks, that can be repurposed across different elements, pages and views. */
+/*
+* Templates
+* Templates are large scale, reusable sitewide blocks, that can be repurposed across different elements, pages and views. 
+*/
 
 // -- Modals
-@import "modals";
+@import 'modals';
+
+// -- Adaptive
+@import 'adaptive/adaptive';
+
+// -- Shapes
+@import 'shapes';
+
+// -- Blocks
+@import 'blocks/blocks';
+
+// -- Avatars
+@import 'avatars/avatars';
+
+// -- Icons
+@import 'icons/icons';
 
 // -- Article formatting
 // @import "article-formatting";
-
-// -- Adaptive
-@import "adaptive/adaptive";
-
-// -- Shapes
-@import "shapes";

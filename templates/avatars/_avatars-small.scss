@@ -1,0 +1,13 @@
+/*
+* Small avatars
+*/
+
+.avatar-small,
+.small-avatar {
+  height: $desktop-avatar-small;
+  width: $desktop-avatar-small;
+  @media #{$mobile} {
+    height: $mobile-avatar-small;
+    width: $mobile-avatar-small;
+  }
+}

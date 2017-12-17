@@ -1,0 +1,19 @@
+/*
+* Gallery
+* The gallery contains quick animations, filters and transitions
+*/
+
+// Enable gallery?
+$gallery: true;
+
+// Imports
+@if ($gallery) {
+  // -- Animations
+  @import 'animations';
+
+  // -- Filters
+  @import 'filters';
+
+  // -- Transitions
+  @import 'transitions';
+}
