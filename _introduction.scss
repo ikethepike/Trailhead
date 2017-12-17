@@ -1,8 +1,7 @@
 /* You should disable or delete this import */
 
-$introductionText: "Hail and well met traveller -
-
-Welcome to Fishbone, an all-you-can-eat SCSS framework, designed to let you hit the ground running for your next project.
+$intro: "Hail and well met traveller -
+Welcome to Lavora, an all-you-can-eat SCSS framework, designed to let you hit the ground running for your next project.
 
 Starting 
 
@@ -22,24 +21,20 @@ Disclaimer
 
 Vips is Still in early Alpha, and as of such you should expect some rough edges.
 
-Zip and questions, comments or complaints to @ikethepike
-
-
-
-";
+Zip and questions, comments or complaints to @ikethepike";
 
 body::before {
-  content: '><(({ Fishbone }))*>';
-  @include heading();
+  content: '⚒ Lavora ⚒';
   margin-top: 10vmin;
+  @include heading();
   display: block;
   text-align: center;
 }
 
 body::after {
-  content: $introductionText;
+  content: $intro;
   max-width: $reading-flow;
-  width: 95%;
+  width: $mobile-flow;
   white-space: pre-wrap;
   margin: 15vmin auto;
   display: block;
@@ -47,6 +42,5 @@ body::after {
   color: $color;
   animation: slideBlockTop 1s 1;
   padding: 2rem;
-  animation: border-paint 3s 1;
   @include bodyText();
 }
