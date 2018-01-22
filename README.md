@@ -10,55 +10,55 @@ The framework is divided by hierarchy and function. First, the rules directory i
 
 Rules contains everything you need to get your application styled right. It contains branding rules, like your color scheme, highlight and state specific application colors. It also contains a set of scaffolding rules, designed to enable you to quickly define and mark
 
-**Structure**
-|- Rules (Main)
-|- Body
-|- Scroll
-|-- _Core Folder_
-|-- Core (Main)
-|-- Functions
-|-- Mixins
-|-- Reset
-|-- _Branding_
-|-- Borders
-|-- Branding (Main)
-|-- Colors
-|-- _Debugging_
-|-- Debugging (Main)
-|-- _Flow_
-|-- Breakpoints
-|-- Flow (Main)
-|-- Golden
-|-- _Gallery_
-|-- Animations
-|-- Filters
-|-- Gallery (Main)
-|-- Transitions
-|-- _Inputs_
-|-- Checkbox
-|-- Inputs (Main)
-|-- Text Inputs
-|-- Textarea
-|-- _Interactives_
-|-- Interactives (Main)
-|-- -- Buttons
-|-- _Scaffolding_
-|-- Dimensions
-|-- Flex
-|-- Grid
-|-- Legacy
-|-- Quick Classes
-|-- Scaffolding (Main)
-|-- Spacing
-|-- Transformations
-|-- _Text_
-|-- Anchor
-|-- Body Text
-|-- Fonts
-|-- Headings
-|-- HR
-|-- Labels
-|-- Text Classes
+**Structure**  
+|- Rules (Main)  
+|- Body  
+|- Scroll  
+|-- _Core Folder_  
+|-- Core (Main)  
+|-- Functions  
+|-- Mixins  
+|-- Reset  
+|-- _Branding_  
+|-- Borders  
+|-- Branding (Main)  
+|-- Colors  
+|-- _Debugging_  
+|-- Debugging (Main)  
+|-- _Flow_  
+|-- Breakpoints  
+|-- Flow (Main)  
+|-- Golden  
+|-- _Gallery_  
+|-- Animations  
+|-- Filters  
+|-- Gallery (Main)  
+|-- Transitions  
+|-- _Inputs_  
+|-- Checkbox  
+|-- Inputs (Main)  
+|-- Text Inputs  
+|-- Textarea  
+|-- _Interactives_  
+|-- Interactives (Main)  
+|-- -- Buttons  
+|-- _Scaffolding_  
+|-- Dimensions  
+|-- Flex  
+|-- Grid  
+|-- Legacy  
+|-- Quick Classes  
+|-- Scaffolding (Main)  
+|-- Spacing  
+|-- Transformations  
+|-- _Text_  
+|-- Anchor  
+|-- Body Text  
+|-- Fonts  
+|-- Headings  
+|-- HR  
+|-- Labels  
+|-- Text Classes  
 |-- Text (Main)
 
 ### Core
