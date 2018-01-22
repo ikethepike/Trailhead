@@ -14,35 +14,35 @@ Rules contains everything you need to get your application styled right. It cont
 |- Rules (Main)  
 |- Body  
 |- Scroll  
-|-- _Core Folder_  
+|-- **Core Folder**  
 |-- Core (Main)  
 |-- Functions  
 |-- Mixins  
 |-- Reset  
-|-- _Branding_  
+|-- **Branding**  
 |-- Borders  
 |-- Branding (Main)  
 |-- Colors  
-|-- _Debugging_  
+|-- **Debugging**  
 |-- Debugging (Main)  
-|-- _Flow_  
+|-- **Flow**  
 |-- Breakpoints  
 |-- Flow (Main)  
 |-- Golden  
-|-- _Gallery_  
+|-- **Gallery**  
 |-- Animations  
 |-- Filters  
 |-- Gallery (Main)  
 |-- Transitions  
-|-- _Inputs_  
+|-- **Inputs**  
 |-- Checkbox  
 |-- Inputs (Main)  
 |-- Text Inputs  
 |-- Textarea  
-|-- _Interactives_  
+|-- **Interactives**  
 |-- Interactives (Main)  
 |-- -- Buttons  
-|-- _Scaffolding_  
+|-- **Scaffolding**  
 |-- Dimensions  
 |-- Flex  
 |-- Grid  
@@ -51,7 +51,7 @@ Rules contains everything you need to get your application styled right. It cont
 |-- Scaffolding (Main)  
 |-- Spacing  
 |-- Transformations  
-|-- _Text_  
+|-- **Text**  
 |-- Anchor  
 |-- Body Text  
 |-- Fonts  

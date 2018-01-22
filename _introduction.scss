@@ -1,7 +1,7 @@
 /* You should disable or delete this import */
 
 $intro: "Hail and well met traveller -
-Welcome to Lavora, an all-you-can-eat SCSS framework, designed to let you hit the ground running for your next project.
+Welcome to Trailhead, an all-you-can-eat SCSS framework, designed to let you hit the ground running for your next project.
 
 Starting 
 
@@ -15,16 +15,16 @@ Good luck out there!
 
 Structure
 
-Vips is built upon a four tiered hierarchy - rules, templates, pages, elements. Rules sit above everything, an abstract layer that governs the entire app. Templates are the broadest possible category, usable across multiple pages/views and able to contain many elements, even pages. Pages are more specific, these are larger wrappers for specific pages, that also may contain several blocks from elements. Finally, elements are the smallest node, and are rather more unique like site headers and the like.
+Trailhead is built upon a four tiered hierarchy - rules, templates, pages, elements. Rules sit above everything, an abstract layer that governs the entire app. Templates are the broadest possible category, usable across multiple pages/views and able to contain many elements, even pages. Pages are more specific, these are larger wrappers for specific pages, that also may contain several blocks from elements. Finally, elements are the smallest node, and are rather more unique like site headers and the like.
 
 Disclaimer 
 
-Vips is Still in early Alpha, and as of such you should expect some rough edges.
+Trailhead is Still in early Alpha, and as of such you should expect some rough edges.
 
 Zip and questions, comments or complaints to @ikethepike";
 
 body::before {
-  content: '⚒ Lavora ⚒';
+  content: '⚒ Trailhead ⚒';
   margin-top: 10vmin;
   @include heading();
   display: block;
