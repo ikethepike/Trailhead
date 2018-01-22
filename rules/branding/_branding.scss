@@ -10,8 +10,13 @@
 @import 'colors';
 
 // App color palette
+// -- Background color
 $background: #1c3c4c;
+
+// -- Default text color
 $color: #fff;
+
+// -- Highlight Color
 $highlight: $radical;
 
 // Secondary Colors
@@ -23,23 +28,14 @@ $error: $aurora-red;
 $success: $green-flash;
 
 // Highlights
-.highlight,
-.highlight-color {
+*.highlight,
+*.highlight-color {
   color: $highlight;
   stroke: $highlight;
 }
-.highlight-bg {
-  background-color: $highlight !important;
-}
-
-// General color rules
-.white-bg {
-  background: #fff;
-  color: #000;
-}
-.black-bg {
-  background: #000;
-  color: #fff;
+*.highlight-bg,
+*.highlight-background {
+  background-color: $highlight;
 }
 
 // Secondary imports

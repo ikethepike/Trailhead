@@ -59,3 +59,14 @@
 @function black-or-white($color) {
   @return if(lightness($color) > 50, #000, #fff);
 }
+
+// Create a starscape
+@function starscape($stars : 700, $max : 2840, $color : #fff) {
+  $starscape: '#{ random($max) }px #{random($max)}px #{$color}';
+
+  @for $i from 2 through $stars {
+    $starscape: '#{$starscape} , #{ random($max) }px #{random($max)}px #{$color}';
+  }
+
+  @return unquote($starscape);
+}
