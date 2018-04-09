@@ -7,15 +7,22 @@
 
 // Color Palettes
 // -- Trailhead colors
-$ike-gray: #252525;
-$smooth-gray: #231f20;
-$fishbone-teal: #1c3c4c;
-
+$trailhead-gray: #231f20;
 $trailhead-dark-teal: #04252c;
 $trailhead-orange: #f64747;
 $trailhead-yellow: #fbaf5d;
 $trailhead-light-teal: #073a45;
 
+.palette {
+  height: 20vh;
+  background: repeating-linear-gradient(
+    90deg,
+    red,
+    red 10vmin,
+    blue 10vmin,
+    blue 20vmin
+  );
+}
 // - Flat UI colors
 $turquoise: #1abc9c;
 $emerland: #2ecc71;
@@ -38,7 +45,6 @@ $pomegranate: #c0392b;
 $silver: #bdc3c7;
 $asbestos: #7f8c8d;
 $radical: #f62459;
-
 // -- Pantone Colors
 $primrose-yellow: #f6d258;
 $pale-dogwood: #efcec5;
@@ -110,7 +116,6 @@ $hemlock: #9cccb2;
 $radiant-orchid: #ac70ae;
 $cayenne: #e0655d;
 $sand: #cfb38c;
-
 // -- Third party colors
 $facebook: #3b5998;
 $flickr: #fe0883;
@@ -122,3 +127,13 @@ $tumblr: #2b4964;
 $twitter: #33ccff;
 $vimeo: #86b32d;
 $youtube: #ff3333;
+$palette: (
+  'teal' : $trailhead-dark-teal,
+  'red' : $trailhead-orange,
+  'blue' : $trailhead-light-teal
+);
+$prefix: 'app';
+// Generate palette
+// @mixin palette($array) {
+// @each()
+// }

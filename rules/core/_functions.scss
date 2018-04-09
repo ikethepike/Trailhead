@@ -4,11 +4,16 @@
 */
 
 // -- Replace in string
-@function str-replace($string, $search, $replace : '') {
+@function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
 
   @return $string;
@@ -27,11 +32,6 @@
   @return $value / ($value * 0 + 1);
 }
 
-// -- Find what percent the child comprises of the parent
-@function percent($parent, $child) {
-  @return ($child / $parent) * 100 + %;
-}
-
 // -- Convert points to rem
 @function pt-em($pt) {
   @return strip-unit($pt) / 12 + rem;
@@ -39,7 +39,7 @@
 
 // -- Returns a random color
 @function random-color() {
-  @return rgb( random(255) - 1, random(255) - 1, random(255) - 1);
+  @return rgb(random(255) - 1, random(255) - 1, random(255) - 1);
 }
 
 // -- Returns number to the power of
@@ -61,7 +61,7 @@
 }
 
 // Create a starscape
-@function starscape($stars : 700, $max : 2840, $color : #fff) {
+@function starscape($stars: 700, $max: 2840, $color: #fff) {
   $starscape: '#{ random($max) }px #{random($max)}px #{$color}';
 
   @for $i from 2 through $stars {
