@@ -42,7 +42,7 @@
 }
 
 // -- Cover the inside of a relative element and choose the background
-@mixin dim($background : $dim) {
+@mixin dim($background: $dim) {
   @include cover();
   background: $background;
 }
@@ -62,7 +62,7 @@
 
 // Creates a gradient
 // @include gradient((0% : rgba(0,0,0,1), 100% : rgba(150,150,150, .5)));
-@mixin gradient($stops, $horizontal : false) {
+@mixin gradient($stops, $horizontal: false) {
   $gradient: 'linear-gradient(';
 
   @if ($horizontal) {
@@ -92,7 +92,7 @@
 }
 
 // Limit amount of lines (default appends ellipsis if overflowing)
-@mixin limit-lines($lines, $line-height : 1em, $ellipsis : true) {
+@mixin limit-lines($lines, $line-height: 1em, $ellipsis: true) {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -102,7 +102,7 @@
   max-height: $line-height * $lines;
 }
 
-@mixin line-height($heightValue: 12 ) {
+@mixin line-height($heightValue: 12) {
   line-height: $heightValue + px; //fallback for old browsers
   line-height: (0.125 * $heightValue) + rem;
 }
@@ -118,11 +118,40 @@
   position: absolute;
 }
 
-@mixin text-inset($color, $opacity : 0.7) {
+@mixin text-inset($color, $opacity: 0.7) {
   @if lightness($color) < 50% {
     text-shadow: 1px 1px 1px rgba(#fff, $opacity);
   } @else {
     text-shadow: -1px -1px 1px rgba(#000, $opacity);
   }
   color: $color;
+}
+
+// Creates a fluid scaling of any property
+// @param {List} properties
+// @param {String} minimum viewport
+// @param {String} maximum viewport
+// @param {String} Minimum value
+// @param {String} Maxiumum value
+@mixin fluid($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media screen and (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(
+        #{$min-value} +
+          #{strip-unit($max-value - $min-value)} *
+          (100vw - #{$min-vw}) /
+          #{strip-unit($max-vw - $min-vw)}
+      );
+    }
+  }
+
+  @media screen and (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
 }
