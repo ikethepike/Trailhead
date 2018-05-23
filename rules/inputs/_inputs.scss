@@ -27,6 +27,7 @@ textarea {
   font-family: $input-font-family;
   min-height: $desktop-input-height;
   font-size: $desktop-input-font-size;
+
   @media #{$mobile} {
     min-height: $mobile-input-height;
     font-size: $mobile-input-font-size;

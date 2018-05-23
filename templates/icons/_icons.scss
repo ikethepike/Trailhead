@@ -25,7 +25,9 @@ $mobileIconCanvas: 2.5rem;
 svg {
   @if $stroke {
     stroke: $icon-color;
-  } @else {
+  }
+
+  @else {
     fill: $icon-color;
   }
 }
@@ -39,6 +41,7 @@ svg {
     height: $desktop-icon-size;
     padding: ($desktopIconCanvas - $desktop-icon-size) / 2;
     position: relative;
+
     @media #{$mobile} {
       width: $mobile-icon-size;
       height: $mobile-icon-size;
@@ -53,7 +56,8 @@ svg {
     @if ($stroke) {
       stroke: $icon-hover;
     }
-    else {
+
+    @else {
       fill: $icon-hover;
     }
   }

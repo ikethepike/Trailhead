@@ -4,6 +4,7 @@
 .scroll-x {
   overflow-x: auto;
 }
+
 .scroll-y {
   overflow-y: auto;
 }
@@ -11,6 +12,7 @@
 // Hide scrollbar mixin
 @mixin hide-scrollbar() {
   -ms-overflow-style: -ms-autohiding-scrollbar;
+
   &::-webkit-scrollbar,
   &::-webkit-scrollbar-track,
   &::-webkit-scrollbar-thumb,

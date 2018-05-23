@@ -15,6 +15,7 @@ $slide-animations: false;
         0% {
           margin-#{$direction}: nth($property, 1);
         }
+
         100% {
           margin-#{$direction}: 0;
         }
@@ -26,6 +27,7 @@ $slide-animations: false;
         0% {
           margin-#{$direction}: nth($property, 2);
         }
+
         100% {
           margin-#{$direction}: 0;
         }
@@ -42,14 +44,17 @@ $fades: false;
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
   }
+
   @keyframes fade-out {
     from {
       opacity: 1;
     }
+
     to {
       opacity: 0;
     }
@@ -65,11 +70,13 @@ $color-animations: false;
       color: #fff;
     }
   }
+
   @keyframes color-from-black {
     0% {
       color: #000;
     }
   }
+
   @keyframes color-from-highlight {
     0% {
       color: $highlight;
@@ -85,9 +92,11 @@ $blink: false;
     0% {
       opacity: 0.2;
     }
+
     20% {
       opacity: 1;
     }
+
     100% {
       opacity: 0.2;
     }
@@ -98,9 +107,11 @@ $blink: false;
     25% {
       color: inherit;
     }
+
     50% {
       color: $highlight;
     }
+
     75% {
       color: inherit;
     }

@@ -10,6 +10,7 @@
   .width-#{$dimension} {
     width: $dimension + %;
   }
+
   .h-#{$dimension},
   .height-#{$dimension} {
     height: $dimension + %;

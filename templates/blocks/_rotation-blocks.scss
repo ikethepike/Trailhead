@@ -12,10 +12,12 @@ $rotation-block-base-time: 0.25s;
   animation-name: rotateBlockRight;
   will-change: transform;
 }
+
 .rotation-block-right,
 .rotation-block-clockwise {
   animation-name: rotateBlockRight;
 }
+
 .rotation-block-left,
 .rotation-block-counter-clockwise {
   animation-name: rotateBlockLeft;
@@ -33,6 +35,7 @@ $rotation-block-base-time: 0.25s;
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -43,6 +46,7 @@ $rotation-block-base-time: 0.25s;
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(-360deg);
   }

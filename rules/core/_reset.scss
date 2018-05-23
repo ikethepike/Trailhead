@@ -71,10 +71,12 @@ q::before,
 q::after {
   content: '';
 }
+
 button,
 input[type='submit'] {
   appearance: none;
 }
+
 strong {
   font-weight: bold;
 }
@@ -101,11 +103,13 @@ hr {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .wrap,
 .inner-wrap {
   width: 100%;
   position: relative;
 }
+
 .clear::before,
 .clear::after {
   content: '';
@@ -119,17 +123,21 @@ hr {
 input,
 select,
 textarea {
-  -webkit-border-radius: 0px;
+  -webkit-border-radius: 0;
 }
+
 .hidden-element {
   display: none;
 }
+
 .visible {
   display: block;
 }
+
 .bold {
   font-weight: bold;
 }
+
 .italic {
   font-style: italic;
 }

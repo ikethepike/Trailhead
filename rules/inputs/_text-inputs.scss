@@ -12,6 +12,7 @@ $text-inputs: "input[type='text'], input[type='email'], input[type='password'], 
   &.error {
     border: $borderWidth $borderStyle $error;
   }
+
   &.success,
   &.match,
   &.confirmation {

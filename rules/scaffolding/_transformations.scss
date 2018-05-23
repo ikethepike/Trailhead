@@ -25,6 +25,7 @@ $translations: true;
     .translate-x-#{$i} {
       transform: translateX(#{$i + rem});
     }
+
     .translate-y-#{$i} {
       transform: translateY(#{$i + rem});
     }

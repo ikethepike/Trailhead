@@ -11,6 +11,7 @@ $mobile-golden: 2.5rem;
 .golden {
   width: $desktop-golden;
   height: $desktop-golden;
+
   @media #{$mobile} {
     width: $mobile-golden;
     height: $mobile-golden;

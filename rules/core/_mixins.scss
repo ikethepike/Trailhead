@@ -15,6 +15,7 @@
 // -- -- Both Axes centered
 @mixin centerXY() {
   @include absolute(-9999rem, -9999rem, -9999rem, -9999rem);
+
   margin: auto;
 }
 // -- -- X-axis centered
@@ -44,6 +45,7 @@
 // -- Cover the inside of a relative element and choose the background
 @mixin dim($background: $dim) {
   @include cover();
+
   background: $background;
 }
 
@@ -78,6 +80,7 @@
   }
 
   $iterations: 0;
+
   @each $percent, $color in $stops {
     $props: $props + $color + ' ' + $percent;
     $iterations: $iterations + 1;
@@ -88,6 +91,7 @@
   }
 
   $gradient: $gradient + $props + ')';
+
   background: unquote($gradient);
 }
 
@@ -121,9 +125,12 @@
 @mixin text-inset($color, $opacity: 0.7) {
   @if lightness($color) < 50% {
     text-shadow: 1px 1px 1px rgba(#fff, $opacity);
-  } @else {
+  }
+
+  @else {
     text-shadow: -1px -1px 1px rgba(#000, $opacity);
   }
+
   color: $color;
 }
 
@@ -142,9 +149,9 @@
     @each $property in $properties {
       #{$property}: calc(
         #{$min-value} +
-          #{strip-unit($max-value - $min-value)} *
-          (100vw - #{$min-vw}) /
-          #{strip-unit($max-vw - $min-vw)}
+        #{strip-unit($max-value - $min-value)} *
+        (100vw - #{$min-vw}) /
+        #{strip-unit($max-vw - $min-vw)}
       );
     }
   }

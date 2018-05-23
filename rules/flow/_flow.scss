@@ -34,6 +34,7 @@ $mobile-max: 100%;
   width: $desktop-flow;
   max-width: $desktop-max;
   margin: 0 auto;
+
   @media #{$mobile} {
     width: $mobile-flow;
     max-width: $mobile-max;
@@ -46,6 +47,7 @@ $mobile-max: 100%;
   max-width: $reading-flow;
   margin: 0 auto;
   position: relative;
+
   @media #{$mobile} {
     max-width: $mobile-flow;
   }

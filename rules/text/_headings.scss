@@ -27,6 +27,7 @@ $mobile-heading-line-height: 110%;
   font-size: $desktop-heading-size;
   font-weight: $desktop-heading-weight;
   line-height: $desktop-heading-line-height;
+
   @media #{$mobile} {
     font-size: $mobile-heading-size;
     font-weight: $mobile-heading-weight;
@@ -78,7 +79,9 @@ $mobile-decrease: 0.75;
         font-size: $size;
       }
     }
-  } @else {
+  }
+
+  @else {
     // Automatic sizing
     @for $heading from 2 through 7 {
       #{'h' + $heading} {
@@ -98,7 +101,9 @@ $mobile-decrease: 0.75;
         font-size: $size;
       }
     }
-  } @else {
+  }
+
+  @else {
     // Automatic sizing
     @for $heading from 2 through 7 {
       #{'h' + $heading} {

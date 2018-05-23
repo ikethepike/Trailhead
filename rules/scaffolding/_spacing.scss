@@ -35,12 +35,15 @@ $mobile-magic: (
   .margin-top {
     margin-top: $desktop-standard-margin-y;
   }
+
   .margin-bottom {
     margin-bottom: $desktop-standard-margin-y;
   }
+
   .margin-left {
     margin-left: $desktop-standard-margin-x;
   }
+
   .margin-right {
     margin-right: $desktop-standard-margin-x;
   }
@@ -49,12 +52,15 @@ $mobile-magic: (
   .marginify-top > * {
     margin-top: $desktop-standard-margin-y;
   }
+
   .marginify-bottom > * {
     margin-bottom: $desktop-standard-margin-y;
   }
+
   .marginify-left > * {
     margin-left: $desktop-standard-margin-x;
   }
+
   .marginify-right > * {
     margin-right: $desktop-standard-margin-x;
   }
@@ -65,12 +71,15 @@ $mobile-magic: (
   .margin-top {
     margin-top: $mobile-standard-margin-y;
   }
+
   .margin-bottom {
     margin-bottom: $mobile-standard-margin-y;
   }
+
   .margin-left {
     margin-left: $mobile-standard-margin-x;
   }
+
   .margin-right {
     margin-right: $mobile-standard-margin-x;
   }
@@ -79,12 +88,15 @@ $mobile-magic: (
   .marginify-top > * {
     margin-top: $mobile-standard-margin-y;
   }
+
   .marginify-bottom > * {
     margin-bottom: $mobile-standard-margin-y;
   }
+
   .marginify-left > * {
     margin-left: $mobile-standard-margin-x;
   }
+
   .marginify-right > * {
     margin-right: $mobile-standard-margin-x;
   }

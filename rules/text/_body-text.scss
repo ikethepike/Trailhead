@@ -27,6 +27,7 @@ $mobile-paragraph-margin: 1.5rem;
   font-size: $desktop-body-size;
   line-height: $desktop-body-line-height;
   color: $body-color;
+
   @media #{$mobile} {
     font-size: $mobile-body-size;
     line-height: $mobile-body-line-height;
@@ -38,7 +39,9 @@ $mobile-paragraph-margin: 1.5rem;
   body {
     @include bodyText();
   }
-} @else {
+}
+
+@else {
   p,
   a,
   li,
@@ -56,6 +59,7 @@ $mobile-paragraph-margin: 1.5rem;
 p {
   display: inline-block;
   margin-bottom: $desktop-paragraph-margin;
+
   @media #{$mobile} {
     margin-bottom: $mobile-paragraph-margin;
   }

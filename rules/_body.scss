@@ -21,6 +21,7 @@ html,
 body {
   @if ($hide-scroll) {
     -ms-overflow-style: -ms-autohiding-scrollbar;
+
     &::-webkit-scrollbar,
     &::-webkit-scrollbar-track,
     &::-webkit-scrollbar-thumb,

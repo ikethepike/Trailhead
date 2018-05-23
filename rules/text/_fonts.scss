@@ -30,7 +30,7 @@ $localFonts: false;
       font-family: $name;
       src: url('../fonts/#{nth($properties, 2)}.eot');
       src: url('../fonts/#{nth($properties, 2)}.eot?#iefix')
-          format('embedded-opentype'),
+        format('embedded-opentype'),
         url('../fonts/#{nth($properties, 2)}.woff2') format('woff2'),
         url('../fonts/#{nth($properties, 2)}.woff') format('woff'),
         url('../fonts/#{nth($properties, 2)}.ttf') format('truetype');

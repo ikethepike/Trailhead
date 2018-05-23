@@ -6,37 +6,38 @@
 // </div>
 
 // -- Transition speed
-$modalTransition    : 1s;
+$modalTransition: 1s;
 
-// -- Modal Z index 
-$modalZ             : 100;
+// -- Modal Z index
+$modalZ: 100;
 
 // -- Blur the bg? (value)
-$modalBlur          : false;
+$modalBlur: false;
 
-.modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; 
-    display: block;
-    z-index: -1000;
-    transition: background $modalTransition;
-    background-color: transparent;
-    &.center{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    // States
-    &.active, &.open{
-        z-index: $modalZ;
-        background-color: $dim;
-    }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1000;
+  transition: background $modalTransition;
+  background-color: transparent;
 
-    @if($modalBlur){
-        filter: blur(#{$modalBlur});
-    }
+  &.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  // States
+  &.active,
+  &.open {
+    z-index: $modalZ;
+    background-color: $dim;
+  }
 
+  @if ($modalBlur) {
+    filter: blur(#{$modalBlur});
+  }
 }

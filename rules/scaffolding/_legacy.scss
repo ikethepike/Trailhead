@@ -7,6 +7,7 @@
 .float-left {
   float: left;
 }
+
 .float-right {
   float: right;
 }
@@ -14,9 +15,11 @@
 .clear {
   clear: both;
 }
+
 .clear-left {
   clear: left;
 }
+
 .clear-right {
   clear: right;
 }
@@ -36,5 +39,6 @@
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacityIE: $opacity * 100;
+
   filter: alpha(opacity=$opacityIE);
 }

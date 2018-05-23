@@ -6,11 +6,6 @@ body {
   background: $background;
 }
 
-body::after {
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-}
-
 // Massive backgrounds
 body::after,
 body::before {

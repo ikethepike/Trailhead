@@ -11,6 +11,7 @@ textarea,
   border: none;
   background: #fff;
   color: #000;
+
   @media #{$mobile} {
     height: $mobile-textarea-height;
   }
