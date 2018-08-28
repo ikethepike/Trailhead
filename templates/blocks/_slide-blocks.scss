@@ -7,35 +7,46 @@
 // -- Base time
 $slide-block-base-time: 0.33s;
 
-.slide-block {
-  position: relative;
-  animation-iteration-count: 1;
-  animation-name: slideBlockTop;
+.slide-block,
+.slide-block-top,
+.slide-block-left,
+.slide-block-bottom,
+.slide-block-right {
   will-change: transform;
+  animation-iteration-count: 1;
+}
+
+.slide-block,
+.slide-block-top {
+  animation-name: slide-block-top;
 }
 
 .slide-block-left {
-  animation-name: slideBlockLeft;
+  animation-name: slide-block-left;
 }
 
 .slide-block-right {
-  animation-name: slideBlockRight;
+  animation-name: slide-block-right;
 }
 
 .slide-block-bottom {
-  animation-name: slideBlockBottom;
+  animation-name: slide-block-bottom;
 }
 
 // Set timings
 @for $i from 1 through $animation-blocks {
-  .slide-block:nth-child(#{$i}) {
+  .slide-block:nth-child(#{$i}),
+  .slide-block-top:nth-child(#{$i}),
+  .slide-block-left:nth-child(#{$i}),
+  .slide-block-bottom:nth-child(#{$i}),
+  .slide-block-right:nth-child(#{$i}) {
     animation-duration: #{$i * $slide-block-base-time};
   }
 }
 
 // Animations
 // -- Top
-@keyframes slideBlockTop {
+@keyframes slide-block-top {
   0% {
     transform: translateY(5rem);
     opacity: 0;
@@ -47,7 +58,7 @@ $slide-block-base-time: 0.33s;
   }
 }
 // -- Left
-@keyframes slideBlockLeft {
+@keyframes slide-block-left {
   0% {
     transform: translateX(5rem);
     opacity: 0;
@@ -59,7 +70,7 @@ $slide-block-base-time: 0.33s;
   }
 }
 // -- Right
-@keyframes slideBlockRight {
+@keyframes slide-block-right {
   0% {
     transform: translateX(-5rem);
     opacity: 0;
@@ -71,7 +82,7 @@ $slide-block-base-time: 0.33s;
   }
 }
 // -- Bottom
-@keyframes slideBlockBottom {
+@keyframes slide-block-bottom {
   0% {
     transform: translateY(-5rem);
     opacity: 0;
