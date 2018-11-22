@@ -1,6 +1,6 @@
 # Trailhead
 
-Trailhead is a rapid deployment, all you can eat SASS framework designed to allow you to hit the ground running in your projects.
+Trailhead is a rapid deployment, all-you-can-eat SCSS framework designed to allow you to hit the ground running in your projects.
 
 ## Structure
 
